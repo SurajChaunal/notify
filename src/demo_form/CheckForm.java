@@ -57,7 +57,8 @@ public class CheckForm extends HttpServlet {
 		    
 		        ResultSet rs = ps.executeQuery();
 		       if(rs.next()) {
-		    	   out.print("successfully logged in");
+		    	   //out.print("successfully logged in");
+		    	   response.sendRedirect("home.html");  
 		    	   
 		       }
 			    

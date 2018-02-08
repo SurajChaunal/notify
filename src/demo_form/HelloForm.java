@@ -5,6 +5,8 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 
@@ -46,15 +48,31 @@ public class HelloForm extends HttpServlet {
 		Connection con = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/P1", "root", "root123");
 
-        PreparedStatement ps = con.prepareStatement("insert into user values(?,?,?,?)");
+		Statement stmt = con.createStatement();
+	    
+        PreparedStatement ps = con.prepareStatement("insert into table user values(?,?,?,?)");
 
         ps.setString(1, uid);
         ps.setString(2, usrtel);
         ps.setString(3, email);
-        ps.setString(4,psw);
-        int i = ps.executeUpdate();
-        if (i > 0)
-            out.print("You are successfully registered...");
+        ps.setString(4, psw);
+        ResultSet rs = ps.executeQuery();
+       if(rs.next()) {
+    	   //out.print("successfully logged in");
+    	   response.sendRedirect("home.html");  
+    	   
+       }
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
         
 		con.close();  
 	}catch(Exception e){ System.out.println(e);}  
