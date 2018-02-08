@@ -50,14 +50,14 @@ public class HelloForm extends HttpServlet {
 
 		Statement stmt = con.createStatement();
 	    
-        PreparedStatement ps = con.prepareStatement("insert into table user values(?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("insert into  user values(?,?,?,?)");
 
         ps.setString(1, uid);
         ps.setString(2, usrtel);
         ps.setString(3, email);
         ps.setString(4, psw);
-        ResultSet rs = ps.executeQuery();
-       if(rs.next()) {
+        int  i = ps.executeUpdate();
+       if(i!=0) {
     	   //out.print("successfully logged in");
     	   response.sendRedirect("home.html");  
     	   
