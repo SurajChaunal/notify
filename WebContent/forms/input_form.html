@@ -27,7 +27,7 @@ td {
 </head>
 <body>
 <div id="style_form">
-<form >
+<form action="/InsertDb" method="GET">
 <table border="1">
 <tr>
 <td>Product Name</td>
@@ -43,27 +43,27 @@ Product description.
 
 <tr>
 <td>Enter base Price</td>
-<td><input id="number" type="number"><br></td>
+<td><input id="number" type="number" name="base"><br></td>
 </tr>
 
 <tr>
 <td>Increase per bid</td>
-<td><input id="number" type="number"><br></td>
+<td><input id="number" type="number" name="incr"><br></td>
 </tr>
 
 <tr>
 <td>Number of hours for auction</td>
-<td><input id="number" type="number"><br></td>
+<td><input id="number" type="number" name="hours"><br></td>
 </tr>
 
 <tr>
 <td>Input picture file</td>
-<td><input type="file"><br></td>
+<td><input type="file" name="pictr"><br></td>
 </tr>
 
 <tr>
 
-<td><input type ="submit"></td>
+<td><input  type ="submit"></td>
 </tr>
 </table>
 </form>

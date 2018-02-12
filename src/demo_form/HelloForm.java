@@ -64,16 +64,7 @@ public class HelloForm extends HttpServlet {
        }
 
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-        
+     
 		con.close();  
 	}catch(Exception e){ System.out.println(e);}  
    
