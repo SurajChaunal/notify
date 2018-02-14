@@ -50,7 +50,7 @@ public class HelloForm extends HttpServlet {
 
 		Statement stmt = con.createStatement();
 	    
-        PreparedStatement ps = con.prepareStatement("insert into  user values(?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("insert into  user(uname,utel,email,psw) values(?,?,?,?)");
 
         ps.setString(1, uid);
         ps.setString(2, usrtel);

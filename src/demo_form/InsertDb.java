@@ -16,11 +16,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-/**
+import javax.servlet.annotation.MultipartConfig;
+/*
  * Servlet implementation class CheckForm
  */
 
+
+@MultipartConfig
 public class InsertDb extends HttpServlet {
 //	private static final long serialVersionUID = 1L;
 
@@ -29,7 +31,7 @@ public class InsertDb extends HttpServlet {
 		      
 		      // Set response content type
 		      response.setContentType("text/html");
-
+		      PrintWriter out = response.getWriter();
 		      
 		      
 		      String name=request.getParameter("firstname");
@@ -38,44 +40,41 @@ public class InsertDb extends HttpServlet {
 		      String incr=request.getParameter("incr");
 		      String hour=request.getParameter("hour");
 		     // String img=request.getParameter("pictr");
-		      Part filePart = request.getPart("pictr");
+		      Part fp = request.getPart("photo");
 		      String filePath = "/home/suraj/Downloads/shopping1.jpg";
+		      if(fp==null) {
+		    	  out.println("problem");
+		    	  
+		      }
 		      
-				      
-		      PrintWriter out = response.getWriter();
+	
+		      else {
+		      
 
 		      String title = "Database Result";
 		      
-		      String docType =
-		         "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
-		    
-		      out.println(docType +
-		         "<html>\n" +
-		         "<head><title>" + title + "</title></head>\n" +
-		         "<body bgcolor = \"#f0f0f0\">\n" +
-		         "<h1 align = \"center\">" + title  + "</h1>\n");
-		    //  out.println(img);
+	
 		 
 		      try{  
 				Class.forName("com.mysql.jdbc.Driver");  
 				  // Execute SQL query
 				Connection con = DriverManager.getConnection(
-		                "jdbc:mysql://localhost:3306/P1", "root", "root123");
+		                "jdbc:mysql://localhost:3306/P1?autoReconnect=true&useSSL=false", "root", "root123");
 				
-		         String sql = "INSERT INTO product values(?,?, ?, ?, ?, ?, ?)";
+		         String sql = "INSERT INTO product(name,descr,price,incr,hour,img) values(?, ?, ?, ?, ?, ?)";
 		            
 		         PreparedStatement statement = con.prepareStatement(sql);
-		         statement.setInt(1, 1);
-		         statement.setString(2, "Samsung");
-		         statement.setString(3, "very good mobile");
-		         statement.setInt(4, 2500);
-		         statement.setInt(5, 50);
-		         statement.setInt(6, 48);
+		         //statement.setInt(1, 1);
+		         statement.setString(1, "Samsung");
+		         statement.setString(2, "very good mobile");
+		         statement.setInt(3, 2500);
+		         statement.setInt(4, 50);
+		         statement.setInt(5, 48);
 		         
 		         
 		        // InputStream inputStream = new FileInputStream(new File(filePath));
-		         InputStream inputStream = filePart.getInputStream();
-		         statement.setBlob(7, inputStream);
+		         InputStream inputStream = fp.getInputStream();
+		         statement.setBlob(6, inputStream);
 		 
 		         int row = statement.executeUpdate();
 		         
@@ -87,7 +86,7 @@ public class InsertDb extends HttpServlet {
 			    
 				con.close();  
 			}catch(Exception e){ System.out.println(e);}  	   
-		   
+		  }	
 	}
 
 }
