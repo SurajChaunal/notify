@@ -7,12 +7,12 @@ $(document).ready(function(){
     
 	$("#btn").click(function(){
     
-		$.get("JsonSample", function(data, status){
+		$.get("JsonProduct", function(data, status){
 			document.getElementById("test").innerHTML="hello";  
-			alert(data);
+			//alert(data);
 			var ret=JSON.parse(data);
-    		//alert("Data: " + data + "\nStatus: " + status);
-    		document.getElementById("test").innerHTML=ret.UserDetails[1]["uname"];
+    		alert("Data: " + data + "\nStatus: " + status);
+    		document.getElementById("test").innerHTML=ret.ProductDetails[0]["name"];
     		
     	
     	});        

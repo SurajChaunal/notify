@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.MultipartConfig;
+import java.lang.Integer;
+
 /*
  * Servlet implementation class CheckForm
  */
@@ -38,10 +40,10 @@ public class InsertDb extends HttpServlet {
 		      String desc=request.getParameter("message");
 		      String base=request.getParameter("base");
 		      String incr=request.getParameter("incr");
-		      String hour=request.getParameter("hour");
+		      String hour=request.getParameter("hours");
 		     // String img=request.getParameter("pictr");
 		      Part fp = request.getPart("photo");
-		      String filePath = "/home/suraj/Downloads/shopping1.jpg";
+		 
 		      if(fp==null) {
 		    	  out.println("problem");
 		    	  
@@ -65,11 +67,11 @@ public class InsertDb extends HttpServlet {
 		            
 		         PreparedStatement statement = con.prepareStatement(sql);
 		         //statement.setInt(1, 1);
-		         statement.setString(1, "Samsung");
-		         statement.setString(2, "very good mobile");
-		         statement.setInt(3, 2500);
-		         statement.setInt(4, 50);
-		         statement.setInt(5, 48);
+		         statement.setString(1, name);
+		         statement.setString(2, desc);
+		         statement.setInt(3,Integer.parseInt(base));
+		         statement.setInt(4,Integer.parseInt(incr));
+		         statement.setInt(5,Integer.parseInt(hour));
 		         
 		         
 		        // InputStream inputStream = new FileInputStream(new File(filePath));
