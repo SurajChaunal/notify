@@ -16,6 +16,11 @@
     <servlet-class>demo_form.InsertDb</servlet-class>
     <load-on-startup>2</load-on-startup>
   </servlet>
+   <servlet>
+    <servlet-name>JsonSample</servlet-name>
+    <servlet-class>demo_form.JsonSample</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
   <servlet-mapping>
     <servlet-name>HelloForm</servlet-name>
     <url-pattern>/HelloForm</url-pattern>
@@ -27,6 +32,10 @@
   <servlet-mapping>
     <servlet-name>InsertDb</servlet-name>
     <url-pattern>/InsertDb</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JsonSample</servlet-name>
+    <url-pattern>/JsonSample</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
