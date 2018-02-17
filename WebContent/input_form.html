@@ -1,72 +1,102 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Input Form</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <style>
-body {
 
-	background-color:mediumseagreen;
+body{
+
+background-color:#001f3f;
 }
-#style_form{
-	border-style: solid;
-	margin-left:30%;
-	margin-top:10%;
-	width:40%;
-	padding-left:20px;
-	background-color:white;
-	
-}
-td {
+label{
 
-
-	padding:5px;
-	color:#DC143C;
+color:white;
 
 }
+
 
 </style>
+
 </head>
 <body>
-<div id="style_form">
-<form action="InsertDb" method="POST" enctype="multipart/form-data">
-<table border="1">
-<tr>
-<td>Product Name</td>
-<td><input type="text" name="firstname" value=""><br></td>
-</tr>
 
-<tr>
-<td>Product Description</td>
-<td><textarea name="message" rows="10" cols="30">
-Product description.
-</textarea></br></td>
-</tr>
+<form method="post" action="/signin"  class="form-horizontal" role="form" >
 
-<tr>
-<td>Enter base Price</td>
-<td><input id="number" type="number" name="base"><br></td>
-</tr>
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
 
-<tr>
-<td>Increase per bid</td>
-<td><input id="number" type="number" name="incr"><br></td>
-</tr>
-
-<tr>
-<td>Number of hours for auction</td>
-<td><input id="number" type="number" name="hours"><br></td>
-</tr>
-
-<tr>
-<td>Input picture file</td>
-<td><input type="file" name="photo" accept="image/*" ><br></td>
-</tr>
-
-<tr>
-
-<td><input  type ="submit"></td>
-</tr>
-</table>
-</form>
+  <label for="usr">Product Name:</label>
+  <input type="text" class="form-control input sm" id="Pname">
 </div>
+<div class="col-sm-3"></div>
+</div>
+
+</div>
+<br>
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+  <label for="comment">Comment:</label>
+  <textarea class="form-control input sm" rows="5" id="description"></textarea>
+</div>
+<div class="col-sm-3"></div>
+</div>
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+  <label for="usr" >Base Price</label>
+  <input type="number" class="form-control input sm" id="price">
+</div>
+<div class="col-sm-3"></div>
+</div>
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+  <label for="usr" >Number Of Hours for auction</label>
+  <input type="number" class="form-control input sm" id="hours">
+</div>
+<div class="col-sm-3"></div>
+</div>
+
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+  <label for="usr" >Increment Per Bid</label>
+  <input type="number" class="form-control input sm" id="inc">
+</div>
+<div class="col-sm-3"></div>
+</div>
+
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+  <label for="usr" >Enter the Picture</label>
+  <input type="file" class="form-control input sm" id="pic">
+</div>
+<div class="col-sm-3"></div>
+</div>
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<button type="submit" class="btn btn-default">Submit</button>
+</div>
+<div class="col-sm-3"></div>
+</div>
+
+</form>
+
+
 </body>
+
 </html>

@@ -72,8 +72,6 @@ public class JsonProduct extends HttpServlet {
 			
 		
 			jObj.put("ProductDetails",list);
-			     
-			//out.println(jObj.toString());
 			
 			
 			response.getWriter().write(jObj.toString());

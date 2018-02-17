@@ -31,17 +31,6 @@ public class CheckForm extends HttpServlet {
 		      String psw=request.getParameter("psw");
 		      PrintWriter out = response.getWriter();
 
-		      String title = "Database Result";
-		      
-		      String docType =
-		         "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
-		      
-		      out.println(docType +
-		         "<html>\n" +
-		         "<head><title>" + title + "</title></head>\n" +
-		         "<body bgcolor = \"#f0f0f0\">\n" +
-		         "<h1 align = \"center\">" + title + "</h1>\n");
-		   
 		  	try{  
 				Class.forName("com.mysql.jdbc.Driver");  
 				  // Execute SQL query
@@ -50,7 +39,7 @@ public class CheckForm extends HttpServlet {
 				   
 				Statement stmt = con.createStatement();
 			    
-		        PreparedStatement ps = con.prepareStatement("select * from user where UID=? and PSW=?");
+		        PreparedStatement ps = con.prepareStatement("select * from user where uname=? and PSW=?");
 
 		        ps.setString(1, uid);
 		        ps.setString(2, psw);
@@ -59,6 +48,10 @@ public class CheckForm extends HttpServlet {
 		       if(rs.next()) {
 		    	   //out.print("successfully logged in");
 		    	   response.sendRedirect("home.html");  
+		    	   
+		       }
+		       else {
+		    	   response.sendRedirect("index.html"); 
 		    	   
 		       }
 			    
