@@ -8,6 +8,8 @@ public class ProductPojo {
 	private int price;
 	private int  hour;
 	private int incr;
+	
+	
 	public int getImgid() {
 		return imgid;
 	}

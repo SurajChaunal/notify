@@ -58,6 +58,7 @@ public class JsonProduct extends HttpServlet {
 				
 				
 				sPojo=new ProductPojo();
+				sPojo.setImgid(rs.getInt("imgid"));
 				sPojo.setName(rs.getString("name"));
 				sPojo.setDesc(rs.getString("descr"));
 				sPojo.setPrice(rs.getInt("price"));
