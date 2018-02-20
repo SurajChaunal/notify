@@ -34,7 +34,7 @@ window.onload=function(){
 			p3.appendChild(price);
 			p4.appendChild(inc);
 			p5.appendChild(hr);
-			p6.appendChild(document.createTextNode("Minutes Left"));
+			p6.appendChild(document.createTextNode("Hours Left"));
 			
 			
 			dv.style.border="dashed";
