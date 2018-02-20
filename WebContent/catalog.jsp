@@ -22,7 +22,7 @@
 
 <div id="place" class="container"></div>
 
-<input type="button" id="btn" value="click here">
+//<input type="button" id="btn" value="click here">
 
 </body>
 </html>
