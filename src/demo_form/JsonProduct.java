@@ -68,7 +68,7 @@ public class JsonProduct extends HttpServlet {
 				sPojo.setIncr(rs.getInt("incr"));
 				sPojo.setHour(rs.getInt("newTime"));
 				
-				
+				sPojo.setPath(rs.getString("path"));
 		
 				list.add(sPojo);
 		

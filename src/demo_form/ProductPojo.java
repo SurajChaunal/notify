@@ -5,6 +5,8 @@ public class ProductPojo {
 	private int  imgid;
 	private String name;
 	private String desc;
+	private String path;
+	
 	private int price;
 	private int  hour;
 	private int incr;
@@ -47,7 +49,12 @@ public class ProductPojo {
 		this.incr = incr;
 	}
 	
-	
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
 	
 	
 }

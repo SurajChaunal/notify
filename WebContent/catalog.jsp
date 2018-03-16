@@ -14,7 +14,31 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <style>
+body{
+background-color:#DFE2DB;
+font:  16px bold arial, sans-serif;
 
+}
+.modprice{
+
+
+}
+
+.modtime{
+color:red;
+font:20px;
+}
+
+div {
+border-width:5px;
+border-style:double;
+
+}
+
+#place{
+border-style:none;
+
+}
 </style>
 </head>
 
@@ -22,7 +46,7 @@
 
 <div id="place" class="container"></div>
 
-//<input type="button" id="btn" value="click here">
+
 
 </body>
 </html>
