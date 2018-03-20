@@ -7,7 +7,14 @@
   
   <build>
 		<plugins>
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdk.level}</source>
+					<target>${jdk.level}</target>
+				</configuration>
+			</plugin>
 			<!-- Below plug-in is used to execute tests -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
