@@ -12,10 +12,11 @@
 <script type="text/javascript" src="javascript/bidding.js" ></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
 body{
-background-color:#DFE2DB;
+background-color:#white;
 font:  16px bold arial, sans-serif;
 
 }
@@ -30,8 +31,8 @@ font:20px;
 }
 
 div {
-border-width:5px;
-border-style:double;
+border-width:1px;
+border-style:none none solid none;
 
 }
 
@@ -39,12 +40,51 @@ border-style:double;
 border-style:none;
 
 }
+
+#bless{
+border-style:none;
+
+
+}
 </style>
 </head>
 
 <body>
+<%
+//allow access only if session exists
+String user = null;
+if(session.getAttribute("user") == null){
+	response.sendRedirect("index.jsp");
+	
+}
+else{ 
+	user = (String) session.getAttribute("user");
+	out.print("you are successfully logged in");
+}
 
-<div id="place" class="container"></div>
+%>
+
+<div id="bless" class="row">
+<div class="col-sm-12">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">YourAuctionSite.com</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="home.jsp">Home</a></li>
+      <li><a href="bootstrap_inp.jsp">Add Product</a></li>
+      <li><a href="catalog.jsp">Browse</a></li>
+      
+    </ul>
+  </div>
+</nav>
+</div>
+</div>
+
+<div id="place" class="container"></div>>
+
+
 
 
 

@@ -50,6 +50,20 @@ h3   {color: black; }
   
 
 </head>
+<body>
+<%
+//allow access only if session exists
+String user = null;
+if(session.getAttribute("user") == null){
+	response.sendRedirect("index.jsp");
+	
+}
+else{ 
+	user = (String) session.getAttribute("user");
+	//out.print("you are successfully logged in");
+}
+
+%>
 
 <div class="row">
 <div class="col-sm-12">
@@ -59,8 +73,8 @@ h3   {color: black; }
       <a class="navbar-brand" href="#">YourAuctionSite.com</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="home.html">Home</a></li>
-      <li><a href="bootstrap_inp.html">Add Product</a></li>
+      <li class="active"><a href="home.jsp">Home</a></li>
+      <li><a href="bootstrap_inp.jsp">Add Product</a></li>
       <li><a href="catalog.jsp">Browse</a></li>
       
     </ul>

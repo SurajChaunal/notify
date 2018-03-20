@@ -82,11 +82,7 @@ public class InsertDb extends HttpServlet {
 					
 
 			    	Iterator iterator = fileItems.iterator();
-			    	String name=request.getParameter("firstname");
-			  		String desc=request.getParameter("message");
-			  		String incr=request.getParameter("incr");
-			        String hour=request.getParameter("hours");
-			        String base=request.getParameter("base");
+			    
 			        String Path="";
 			        
 			        
@@ -125,10 +121,10 @@ public class InsertDb extends HttpServlet {
 		         statement.setString(1, input.get("firstname"));
 		         statement.setString(2, input.get("message"));
 		         statement.setInt(3,Integer.parseInt(input.get("base")));
-		         statement.setInt(4,Integer.parseInt(input.get("hours")));
+		         statement.setInt(4,Integer.parseInt(input.get("incr")));
 		         
 		         
-		         statement.setInt(5,Integer.parseInt(input.get("incr")));
+		         statement.setInt(5,Integer.parseInt(input.get("hours")));
 		         statement.setString(6,Path);
 		        
 		        // InputStream inputStream = new FileInputStream(new File(filePath));
@@ -139,7 +135,7 @@ public class InsertDb extends HttpServlet {
 		         
 		         if(row!=0) {
 		    	   out.print(row);
-		    	   response.sendRedirect("home.html");  
+		    	   response.sendRedirect("home.jsp");  
 		    	   
 		       }
 			    

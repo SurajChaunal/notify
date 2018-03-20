@@ -59,7 +59,7 @@ public class HelloForm extends HttpServlet {
         int  i = ps.executeUpdate();
        if(i!=0) {
     	   //out.print("successfully logged in");
-    	   response.sendRedirect("home.html");  
+    	   response.sendRedirect("home.jsp");  
     	   
        }
 
